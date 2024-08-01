@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrar Vuelo</title>
+    <script>
+        function validarFormulario() {
+            // Validación simple en JavaScript
+            const origen = document.forms["vueloForm"]["origen"].value;
+            const destino = document.forms["vueloForm"]["destino"].value;
+            if (origen == "" || destino == "") {
+                alert("Origen y destino deben ser llenados");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Registrar Vuelo</h2>
+    <form name="vueloForm" action="registrar_vuelo.php" method="post" onsubmit="return validarFormulario()">
+        Origen: <input type="text" name="origen"><br>
+        Destino: <input type="text" name="destino"><br>
+        Fecha: <input type="date" name="fecha"><br>
+        Plazas Disponibles: <input type="number" name="plazas_disponibles"><br>
+        Precio: <input type="text" name="precio"><br>
+        <input type="submit" value="Registrar Vuelo">
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrar Hotel</title>
+    <script>
+        function validarFormulario() {
+            // Validación simple en JavaScript
+            const nombre = document.forms["hotelForm"]["nombre"].value;
+            const ubicación = document.forms["hotelForm"]["ubicación"].value;
+            if (nombre == "" || ubicación == "") {
+                alert("Nombre y ubicación deben ser llenados");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Registrar Hotel</h2>
+    <form name="hotelForm" action="registrar_hotel.php" method="post" onsubmit="return validarFormulario()">
+        Nombre: <input type="text" name="nombre"><br>
+        Ubicación: <input type="text" name="ubicación"><br>
+        Habitaciones Disponibles: <input type="number" name="habitaciones_disponibles"><br>
+        Tarifa por Noche: <input type="text" name="tarifa_noche"><br>
+        <input type="submit" value="Registrar Hotel">
+    </form>
+</body>
+</html>
